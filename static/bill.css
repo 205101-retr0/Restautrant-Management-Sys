@@ -2,6 +2,10 @@ body{
     color: red;
 }
 
-div{
+table{
+    color: green;
+}
+
+.ctable{
     color: blue;
 }
