@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='bill.css')}}">
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Bill</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody class="">
+                    {{items}}
+                    {% for k,v in items.items() %}
+                    <tr>
+                        <td>{{ k }} {{ v }}</td>
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <!-- <h3>Total: {{ total }}</h3> -->
+        </div>
+    </div>
+</div>
+<a href="{{ url_for('main.menu') }}" class="btn btn-primary">Back to the menu</a>
+{% endblock %}
+<!-- {% if bill %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{{ bill.name }}</h1>
+            <p>{{ bill.description }}</p>
+            <p>{{ bill.price }}</p>
+            <p>{{ bill.date }}</p>
+            <p>{{ bill.status }}</p>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Bill not found</h1>
+        </div>
+    </div>
+</div>
+{% endif %} -->

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+{{super()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid center">
+    <div class="d-flex row mb-3 justify-content-center">
+        <div class="text-center">
+            <!-- Add_Order button -->
+            <form action="/menu" method="post">
+                <button type="submit" class="btn btn-lg cbtn">Add Order</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="d-flex flex-row row">
+        <!-- All orders button -->
+        <div class="text-center mb-3 cform">
+            <form action="/orders" method="post">
+                <button type="submit" class="btn btn-lg cbtn">Order List</button>
+            </form>
+        </div>
+
+        <!-- Check for VIP customers button -->
+        <div class="text-center mb-3 cform">
+            <form action="/vip_customer" method="post">
+                <button type="submit" class="btn btn-lg cbtn">VIP Customers</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
