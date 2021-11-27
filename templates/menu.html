@@ -62,7 +62,7 @@
                     </div>
                     <input type="number" class="form-control w-20" name="item-quantity">
                 </div>
-                <button type="submit" class="btn btn-primary">Add to orders</button>
+                <button type="submit" class="btn btn-primary w-50 center">Add to orders</button>
             </form>
         </div>
     </div>
@@ -98,5 +98,26 @@
             <p class="text-uppercase">Red: Mary Rivers, Pinot Noir, Sonoma Coast</p>
         </div>
     </div>
+    <!-- Make a form with a text input and a button -->
+    <!-- make a clear class div and give it 10% height -->
+    
+
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-3">
+        {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            <div class="alert alert-info mb-1 text-black-20 text-center" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% endwith %}        
+        <form class="center" action="/verify_vip" method="post">
+            <input type="number" class="cinput" name="cphone"><br>
+            <button class="submit" type="submit">Check Discount Availablity</button>
+        </div>
+    </div>
+    <div style="clear: both; height: 150px"></div>
+    
 </div>
 {% endblock %}
